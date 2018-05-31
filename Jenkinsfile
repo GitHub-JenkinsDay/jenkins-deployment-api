@@ -16,7 +16,7 @@ node {
      echo 'Performing Code Quality Scan'
 
      // Record result of test with GitHub Status API
-     def result = 'failure'
+     def result = 'success'
      def target_url = 'http://workshop-jenkins.octodemoapps.com/jenkins/job/GitHub-JenkinsDay/job/jenkins-deployment-api/job/master/'
      def owner = "GitHub-JenkinsDay"
      def repo = "jenkins-deployment-api"
