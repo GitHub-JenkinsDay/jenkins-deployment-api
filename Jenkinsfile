@@ -16,7 +16,7 @@ node {
      echo 'Performing Code Quality Scan'
 
      // Record result of test with GitHub Status API
-     def result = 'success'
+     def result = 'failure'
      def target_url = 'http://workshop-jenkins.octodemoapps.com/jenkins/job/GitHub-JenkinsDay/job/jenkins-deployment-api/job/master/'
      def owner = "GitHub-JenkinsDay"
      def repo = "jenkins-deployment-api"
@@ -25,7 +25,7 @@ node {
      def StatusBody =
      '{"state": "' + result +
      '","target_url": "' + target_url +
-     '","description": "The security scan succeeded!"' +
+     '","description": "Oh no! The security scan failed!"' +
      ',"context": "continuous-integration/code-quality"}'
 
      echo StatusBody
