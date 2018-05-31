@@ -25,7 +25,7 @@ node {
      def StatusBody =
      '{"state": "' + result +
      '","target_url": "' + target_url +
-     '","description": "The security scan succeeded!"' +
+     '","description": "The code quality scan succeeded!"' +
      ',"context": "continuous-integration/code-quality"}'
 
      echo StatusBody
