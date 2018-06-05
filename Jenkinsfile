@@ -32,7 +32,7 @@ node {
 
      def StatusURL = "https://api.github.com/repos/${owner}/${repo}/statuses/${ref}"
 
-     def StatusResponse = httpRequest authentication: 'mfilosaPAT', httpMode: 'POST', requestBody: StatusBody , responseHandle: 'STRING', url: StatusURL
+     def StatusResponse = httpRequest authentication: 'PavanPAT', httpMode: 'POST', requestBody: StatusBody , responseHandle: 'STRING', url: StatusURL
      if(StatusResponse.status != 201) {
        error("Status API Update Failed: " + StatusResponse.status)
 
@@ -59,7 +59,7 @@ node {
 
      def StatusURL = "https://api.github.com/repos/${owner}/${repo}/statuses/${ref}"
 
-     def StatusResponse = httpRequest authentication: 'mfilosaPAT', httpMode: 'POST', requestBody: StatusBody , responseHandle: 'STRING', url: StatusURL
+     def StatusResponse = httpRequest authentication: 'PavanPAT', httpMode: 'POST', requestBody: StatusBody , responseHandle: 'STRING', url: StatusURL
      if(StatusResponse.status != 201) {
        error("Status API Update Failed: " + StatusResponse.status)
 
@@ -78,7 +78,7 @@ node {
 
 
       // Create new Deployment using the GitHub Deployment API
-      def response = httpRequest authentication: 'mfilosaPAT', httpMode: 'POST', requestBody: deployBody, responseHandle: 'STRING', url: deployURL, validResponseCodes: '100:599'
+      def response = httpRequest authentication: 'PavanPAT', httpMode: 'POST', requestBody: deployBody, responseHandle: 'STRING', url: deployURL, validResponseCodes: '100:599'
 
       if(response.status != 201) {
           error("Deployment API Create Failed: " + response.status + response.content)
@@ -98,7 +98,7 @@ node {
       def result = (deployStatus) ? 'failure' : 'success'
       def deployStatusBody = '{"state": "' + result + '","target_url": "http://github.com/deploymentlogs"}'
       def deployStatusURL = "https://api.github.com/repos/${owner}/${repo}/deployments/${id}/statuses"
-      def deployStatusResponse = httpRequest authentication: 'mfilosaPAT', httpMode: 'POST', requestBody: deployStatusBody , responseHandle: 'STRING', url: deployStatusURL
+      def deployStatusResponse = httpRequest authentication: 'PavanPAT', httpMode: 'POST', requestBody: deployStatusBody , responseHandle: 'STRING', url: deployStatusURL
       if(deployStatusResponse.status != 201) {
         error("Deployment Status API Update Failed: " + deployStatusResponse.status)
       }
